@@ -1,22 +1,39 @@
 import React from "react";
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 export default function Header() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar
+      className="navConfig"
+      collapseOnSelect
+      expand="lg"
+      bg="dark"
+      variant="dark"
+    >
       <Container>
-        <Navbar.Brand href="#home">Bookers.com</Navbar.Brand>
+        <LinkContainer to={"/"}>
+          <Navbar.Brand>Library</Navbar.Brand>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">Books</Nav.Link>
 
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">User</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Books</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Profile</NavDropdown.Item>
+            <NavDropdown
+              title={`Ali batashi${(<i className="fas fa-solid"></i>)}`}
+              id="collasible-nav-dropdown"
+            >
+              <LinkContainer to={"/user"}>
+                <NavDropdown.Item>Profile</NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to={"/userbooks"}>
+                <NavDropdown.Item>Books</NavDropdown.Item>
+              </LinkContainer>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">LOGOUT</NavDropdown.Item>
+              <LinkContainer to={"/logout"}>
+                <NavDropdown.Item>Logout</NavDropdown.Item>
+              </LinkContainer>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

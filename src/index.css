@@ -1,9 +1,32 @@
-.homeScreen {
-  background-color: rgb(124, 128, 155);
+.mainScreen {
+  background-color: #564154;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 .bookCards {
-  background-color: rgb(71, 73, 53);
+  background-color: #f3f7f0;
   border: 0 px;
-  border-radius: 1.5em;
-  color: antiquewhite;
+  border-radius: 0.5em;
+  color: black;
+  letter-spacing: normal;
+}
+
+main {
+  min-height: 85vh;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+nav {
+  background-color: teal;
+}
+.CustomContainer {
+  padding-top: 50px;
+}
+.navButtons {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
 }
