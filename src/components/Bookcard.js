@@ -2,14 +2,14 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function Bookcard({ book }) {
-  return book ? (
+export default function Bookcard(props) {
+  return props.book ? (
     <Card data-testid="card" className="bookCards my-3">
       <Card.Body className="bookCards">
-        <Card.Title data-testid="title">{book.name}</Card.Title>
-        <Card.Subtitle data-testid="subTitle">{book.id}</Card.Subtitle>
+        <Card.Title data-testid="title">{props.book.name}</Card.Title>
+        <Card.Subtitle data-testid="subTitle">{props.book.id}</Card.Subtitle>
         <Card.Link>
-          <Link to={`/book/${book.id}`}>More Details</Link>
+          <Link to={`/book/${props.book.id}`}>More Details</Link>
         </Card.Link>
       </Card.Body>
     </Card>
